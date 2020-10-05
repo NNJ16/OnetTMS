@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="448.0" prefWidth="457.0" style="-fx-background-color: FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.nnj.mdss.fx.style.controller.MainFormController">
+   <children>
+      <ImageView fx:id="lbl_back111" fitHeight="140.0" fitWidth="234.0" layoutX="132.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/cover.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="103.0" layoutY="216.0" text="User ID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txt_user" layoutX="187.0" layoutY="202.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="102.0" layoutY="272.0" text="Password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXPasswordField fx:id="txt_pass" layoutX="187.0" layoutY="259.0" onAction="#logc" prefHeight="25.0" prefWidth="169.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="btn_sign" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="165.0" layoutY="350.0" onAction="#log" prefHeight="48.0" prefWidth="126.0" style="-fx-background-color: #dadce0;" text="Log In   ">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fx:id="lbl_back11" fitHeight="36.0" fitWidth="27.0" layoutX="173.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assest/security%20(1).png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ImageView>
+      <Line endX="329.0" layoutX="116.0" layoutY="162.0" startX="-102.0" stroke="#006b39" />
+      <Label layoutX="83.0" layoutY="124.0" prefHeight="32.0" prefWidth="303.0" text="Tracking Management System" textFill="#5abf5e">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
