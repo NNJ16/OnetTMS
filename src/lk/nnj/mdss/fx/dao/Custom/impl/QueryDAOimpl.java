@@ -89,7 +89,9 @@ public class QueryDAOimpl implements QueryDAO {
             String oid = rst.getString(1);
             String glno = rst.getString(2);
             String baname = rst.getString(3);
+            System.out.println(oid + "---------");
             LocalDate odate = rst.getTimestamp(4).toLocalDateTime().toLocalDate();
+            System.out.println(odate + "---------");
             String desc = rst.getString(5);
             String tid = rst.getString(6);
             String status = rst.getString(7);

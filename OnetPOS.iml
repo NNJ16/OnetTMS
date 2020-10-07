@@ -10,5 +10,6 @@
     <orderEntry type="library" name="commons-beanutils-1.9.3" level="project" />
     <orderEntry type="library" name="controlsfx-8.40.14" level="project" />
     <orderEntry type="library" name="jasperreports-6.7.0" level="project" />
+    <orderEntry type="library" name="poi" level="project" />
   </component>
 </module>

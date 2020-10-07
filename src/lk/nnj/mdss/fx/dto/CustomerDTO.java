@@ -8,6 +8,7 @@ public class CustomerDTO {
     private String addr2;
     private String city;
 
+    public CustomerDTO(){}
     public CustomerDTO(String glno, String BAname, String phone, String addr1, String addr2, String city) {
         this.glno = glno;
         this.BAname = BAname;

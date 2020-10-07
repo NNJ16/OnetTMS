@@ -10,6 +10,7 @@ public class TrackDTO {
     private String delby;
     private String oid;
 
+    public TrackDTO(){}
     public TrackDTO(String tid, Date delDate, String status, String note, String delby, String oid) {
         this.tid = tid;
         this.delDate = delDate;

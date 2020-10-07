@@ -8,7 +8,7 @@ public class OrderDTO {
     private LocalDate date;
     private String description;
     private String gllno;
-
+    public OrderDTO(){}
     public OrderDTO(String oid, LocalDate date, String description, String gllno) {
         this.oid = oid;
         this.date = date;

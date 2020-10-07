@@ -200,13 +200,14 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="img_print" fitHeight="46.0" fitWidth="36.0" layoutX="368.0" layoutY="474.0" onMouseClicked="#print" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img_print" fitHeight="46.0" fitWidth="36.0" layoutX="368.0" layoutY="467.0" onMouseClicked="#Import" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assest/icons8-print-96.png" />
+            <Image url="@../assest/Microsoft-Excel-2013-icon%20(1).png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <Label layoutX="369.0" layoutY="504.0" text="Import" />
    </children>
 </AnchorPane>

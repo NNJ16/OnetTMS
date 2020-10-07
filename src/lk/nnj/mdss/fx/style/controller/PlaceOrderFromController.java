@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -211,17 +212,21 @@ public class PlaceOrderFromController implements Initializable {
                                 JOptionPane.showMessageDialog(null,"Phone Number is not valid.");
                             }
                                 }
-                                OrderDTO oDTO = ManageOrderBussines.findOrder(oid);
-                                if(oDTO == null) {
-                                    OrderDTO orderDTO =
-                                            new OrderDTO(
-                                                    oid,
-                                                    txt_date.getValue(),
-                                                    "",
-                                                    glno
-                                            );
-                                    ManageOrderBussines.addOrder(orderDTO);
-                                }
+                                if(txt_date.getValue()==null)
+                                {
+                                    JOptionPane.showMessageDialog(null,"Date is required");
+                                }else {
+                                    OrderDTO oDTO = ManageOrderBussines.findOrder(oid);
+                                    if (oDTO == null) {
+                                        OrderDTO orderDTO =
+                                                new OrderDTO(
+                                                        oid,
+                                                        txt_date.getValue(),
+                                                        "",
+                                                        glno
+                                                );
+                                        ManageOrderBussines.addOrder(orderDTO);
+                                    }
                                     ContainDTO containDTO =
                                             new ContainDTO(
                                                     oid,
@@ -229,18 +234,15 @@ public class PlaceOrderFromController implements Initializable {
                                                     item,
                                                     qty
                                             );
-                                    try
-                                    {
-                                        if(qty!=0)
-                                        {
+                                    try {
+                                        if (qty != 0) {
                                             ManageConBussines.addContain(containDTO);
                                         }
-                                    }catch(Exception e)
-                                    {
-                                        JOptionPane.showMessageDialog(null,"Cannot Add Same Item Twice");
+                                    } catch (Exception e) {
+                                        JOptionPane.showMessageDialog(null, "Cannot Add Same Item Twice");
                                     }
                                     viewTable();
-
+                                }
 
                                 String desc = ManageQueryBussines.findNameQty(oid);
                                 ManageQueryBussines.uptDesc(desc,oid);
@@ -394,9 +396,27 @@ public class PlaceOrderFromController implements Initializable {
             e.printStackTrace();
         }
     }
+    private static Stage stage = null;
     @FXML
-    void print(MouseEvent event) {
+    void Import(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/lk/nnj/mdss/fx/style/AddExcelFile.fxml"));
+        Parent root = (Parent) fxmlLoader.load();
+        if(root != null) {
+            if(stage == null)
+            {
+                stage = new Stage();
+                stage.setTitle("Import from Excel");
+                Image image = new Image("/lk/nnj/mdss/fx/assest/main.png");
+                stage.getIcons().add(image);
+                stage.setResizable(false);
+                stage.setOnCloseRequest(event1 -> {
+                    stage =null;}
+                );
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
 
+        }
 
     }
 }

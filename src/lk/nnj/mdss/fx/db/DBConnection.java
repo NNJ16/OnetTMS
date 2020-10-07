@@ -13,8 +13,8 @@ public class DBConnection {
         if (connection==null){
             try {
                 connection = DriverManager.getConnection(
-                        "jdbc:mysql://localhost/Onetdb",
-                        "root"
+                        "jdbc:mysql://mysql-11308-0.cloudclusters.net:11308/testdb",
+                        "onetuser"
                         ,"1234"
                 );
             } catch (SQLException e) {
